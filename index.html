@@ -1,358 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecomese - Your One-Stop Shop</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <title>Stain Red Saree — Product Review</title>
+  <style>
+    body{font-family: Arial, sans-serif; padding:24px; max-width:900px; margin:auto;}
+    .product{display:flex; gap:20px; align-items:flex-start;}
+    .product img{width:350px; height:auto; border:1px solid #ddd; border-radius:6px;}
+    .buy-btn{display:inline-block; padding:12px 18px; border-radius:6px; background:#FF9900; color:#000; text-decoration:none; font-weight:600;}
+    .disclosure{font-size:13px; color:#444; margin-top:10px;}
+  </style>
 </head>
-
-<style>
-    /* General Body Styles */
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        color: #333;
-        background-color: #f4f4f4;
-    }
-
-    /* Container for Centering Content */
-    .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    /* Header Styles */
-    .header {
-        background: #fff;
-        color: #333;
-        padding: 1rem 0;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header .logo a {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-    }
-
-    .header .navigation ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-    }
-
-    .header .navigation ul li {
-        margin-left: 20px;
-    }
-
-    .header .navigation a {
-        color: #333;
-        text-decoration: none;
-        font-size: 1rem;
-    }
-
-    .header-icons {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-icons .cart-icon,
-    .header-icons .user-icon {
-        margin-left: 15px;
-        position: relative;
-    }
-
-    .header-icons img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .cart-item-count {
-        position: absolute;
-        top: -5px;
-        right: -10px;
-        background: #ff0000;
-        color: #fff;
-        border-radius: 50%;
-        padding: 2px 6px;
-        font-size: 0.75rem;
-    }
-
-    /* Hero Section */
-    .hero {
-        background: #333;
-        color: #fff;
-        padding: 4rem 0;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    /* Button Styles */
-    .btn {
-        display: inline-block;
-        background: #5cb85c;
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 1rem;
-    }
-
-    .btn-primary {
-        background: #0275d8;
-    }
-
-    /* Product Grid */
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 2rem;
-    }
-
-    .product-item {
-        background: #fff;
-        padding: 1rem;
-        border: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .product-item img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
-    }
-
-    .product-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .price {
-        color: #333;
-        font-weight: bold;
-    }
-
-    .add-to-cart-btn {
-        background: #5cb85c;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        width: 100%;
-    }
-
-    /* Sections */
-    .featured-products,
-    .all-products {
-        padding: 2rem 0;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-    }
-
-    /* Footer */
-    .footer {
-        background: #333;
-        color: #fff;
-        padding: 2rem 0;
-    }
-
-    .footer-columns {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .footer-column {
-        flex: 1;
-    }
-
-    .footer-column h3 {
-        margin-bottom: 1rem;
-    }
-
-    .footer-column ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-column ul li a {
-        color: #ccc;
-        text-decoration: none;
-    }
-
-    .social-links a {
-        margin-right: 10px;
-    }
-
-    .social-links img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 2rem;
-        border-top: 1px solid #444;
-        padding-top: 1rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .header .container {
-            flex-direction: column;
-        }
-
-        .header .navigation ul {
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1rem;
-        }
-
-        .header .navigation ul li {
-            margin: 5px 0;
-        }
-
-        .footer-columns {
-            flex-direction: column;
-            text-align: center;
-        }
-    }
-</style>
-
-
 <body>
+  <div class="product">
+    <img src="images/image.png" alt="Stain Red Saree">
+    <div>
+     
+Click to see full view
+ Ask Rufus
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#">Ecomese</a>
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-icons">
-                <a href="cart.html" class="cart-icon">
-                    <img src="https://cdn1.iconfinder.com/data/icons/material-core/20/shopping-cart-512.png"
-                        alt="Shopping Cart">
-                    <span class="cart-item-count">0</span>
-                </a>
-                <a href="#" class="user-icon">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-                        alt="User Profile">
-                </a>
-            </div>
-        </div>
-    </header>
+Can it connect to multiple devices?
+ 
+Does it have noise cancellation?
+ 
+Is this waterproof?
+ 
+Ask something else
+boAt Airdopes 121 Pro Plus, 100HRS Battery, 4Mics ENx, 50ms Low Latency, Fast Charge, LED Display, IPX5, v5.3 Bluetooth in Ear Earbuds, TWS Ear Buds Wireless Earphones with mic (Black)
+      <!-- REQUIRED: clear affiliate disclosure near the link -->
+      <p class="disclosure"><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.</p>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to Ecomese</h1>
-                <p>Discover a world of amazing products at your fingertips.</p>
-                <a href="products.html" class="btn btn-primary">Shop Now</a>
-            </div>
-        </section>
+      <!-- Amazon affiliate link — visible, obvious, and must be clicked by user -->
+      <a class="buy-btn"
+         href="https://amzn.to/3K6wnwL"
+         target="_blank" rel="noopener noreferrer">
+        Buy on Amazon
+      </a>
+    </div>
+  </div>
 
-        <section class="featured-products">
-            <div class="container">
-                <h2>Featured Products</h2>
-                <div class="product-grid">
-                    <!-- Product items will be dynamically inserted here by JavaScript -->
-                </div>
-            </div>
-        </section>
+  <hr>
+  <h2>Details & Review</h2>
+  <p>Write at least a few paragraphs (original content) about the product, features, comparisons, usage tips, and your honest opinion. Amazon reviews teams expect real content — this helps your application and keeps the account safe.</p>
 
-        <section class="all-products">
-            <div class="container">
-                <h2>All Products</h2>
-                <div class="product-grid" id="product-list">
-                    <!-- Example of a single product item -->
-                    <div class="product-item">
-                        <img src="images/sarees.jpg" alt="Product Name" style="width: auto; height: 500px;">
-                        <h3>Stain Red Saree</h3>
-                        <button class="btn add-to-cart-btn" data-id="1" onclick="window.location.href='https://amzn.to/4mdIPJ5'">Click to Buy</button>
-                    </div>
-                    <div class="product-item">
-                        <img src="images/sarees1.jpg" alt="Product Name" style="width: auto; height: 500px;">
-                        <h3>Wear Rose Gold Satin Silk Saree</h3>
-                        <button class="btn add-to-cart-btn" data-id="1" onclick="window.location.href='https://amzn.to/46WkkM2'">Click to Buy</button>
-                    </div>
-                    <!-- More products can be added here -->
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>Your one-stop shop for everything you need. We are committed to providing high-quality products
-                        and excellent customer service.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><img
-                                src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/2048px-Facebook_f_logo_%282021%29.svg.png"
-                                alt="Facebook" style="width: 24px; height: 24px;"></a>
-                        <a href="https://x.com" target="_blank">
-                            <img src="data:image/png;base64,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"
-                                alt="Twitter" style="width: 24px; height: 24px;">
-                        </a>
-
-                        <a href="#"><img
-                                src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png"
-                                alt="Instagram" style="width: 24px; height: 24px;"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ecomese. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
-
 </html>
