@@ -48,62 +48,62 @@
 </head>
 <body>
 
-   <div class="product">
-    <img src="images/Screenshot 2025-09-19 203435.png" alt="Ethiglo Deep Cleansing Facial">
-    <div class="product-content">
-      <h3>Ethiglo Deep Cleansing Facial</h3>
-      <p>Ethiglo Deep Cleansing Facial Foam Face Wash for Healthy, Soft and Smooth Skin | Removes Dirt, Impurities and Excess Oil | Suitable for All Skin Types | Pack of 1 (70ml)</p>
-      <p class="disclosure"><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.</p>
-      <a class="buy-btn"
-         href="https://amzn.to/46CMB8o"
-         target="_blank" rel="noopener noreferrer">
-        Buy on Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- Product 1 -->
-  <div class="product">
-    <img src="images/image.png" alt="boAt Airdopes 121 Pro Plus">
-    <div class="product-content">
-      <h3>boAt Airdopes 121 Pro Plus</h3>
-      <p>100HRS Battery, 4 Mics ENx, 50ms Low Latency, Fast Charge, LED Display, IPX5, v5.3 Bluetooth in Ear Earbuds, TWS Ear Buds Wireless Earphones with mic (Black).</p>
-
-      <p><strong>Common Questions:</strong></p>
-      <ul>
-        <li>Can it connect to multiple devices?</li>
-        <li>Does it have noise cancellation?</li>
-        <li>Is this waterproof?</li>
-      </ul>
-
-      <p class="disclosure"><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.</p>
-      <a class="buy-btn"
-         href="https://amzn.to/3K6wnwL"
-         target="_blank" rel="noopener noreferrer">
-        Buy on Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- Product 2 -->
-  <div class="product">
-    <img src="images/Screenshot 2025-09-27 215926.png" alt="Steelbird SBA-7 Helmet">
-    <div class="product-content">
-      <h3>Steelbird SBA-7 7Wings Helmet</h3>
-      <p>ISI Certified Flip-Up Helmet for Men and Women with Inner Smoke Sun Shield and Outer Clear Visor (Large 600 MM, Dashing Black).</p>
-
-      <p class="disclosure"><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.</p>
-      <a class="buy-btn"
-         href="https://amzn.to/4mGRHqa"
-         target="_blank" rel="noopener noreferrer">
-        Buy on Amazon
-      </a>
-    </div>
-  </div>
+  <h1>Product Reviews</h1>
+  <div id="product-list"></div>
 
   <hr>
   <h2>Details & Review</h2>
   <p>Write at least a few paragraphs (original content) about the product, features, comparisons, usage tips, and your honest opinion. Amazon reviews teams expect real content — this helps your application and keeps the account safe.</p>
+
+  <script>
+    const products = [
+      {
+        name: "Ethiglo Deep Cleansing Facial",
+        desc: "Ethiglo Deep Cleansing Facial Foam Face Wash for Healthy, Soft and Smooth Skin | Removes Dirt, Impurities and Excess Oil | Suitable for All Skin Types | Pack of 1 (70ml)",
+        img: "images/Screenshot 2025-09-19 203435.png",
+        link: "https://amzn.to/46CMB8o"
+      },
+      {
+        name: "boAt Airdopes 121 Pro Plus",
+        desc: "100HRS Battery, 4 Mics ENx, 50ms Low Latency, Fast Charge, LED Display, IPX5, v5.3 Bluetooth in Ear Earbuds, TWS Ear Buds Wireless Earphones with mic (Black).",
+        img: "images/image.png",
+        link: "https://amzn.to/3K6wnwL",
+        faq: [
+          "Can it connect to multiple devices?",
+          "Does it have noise cancellation?",
+          "Is this waterproof?"
+        ]
+      },
+      {
+        name: "Steelbird SBA-7 7Wings Helmet",
+        desc: "ISI Certified Flip-Up Helmet for Men and Women with Inner Smoke Sun Shield and Outer Clear Visor (Large 600 MM, Dashing Black).",
+        img: "images/Screenshot 2025-09-27 215926.png",
+        link: "https://amzn.to/4mGRHqa"
+      }
+    ];
+
+    const container = document.getElementById("product-list");
+
+    products.forEach(p => {
+      let faqList = "";
+      if (p.faq) {
+        faqList = `<p><strong>Common Questions:</strong></p><ul>${p.faq.map(q => `<li>${q}</li>`).join("")}</ul>`;
+      }
+
+      container.innerHTML += `
+        <div class="product">
+          <img src="${p.img}" alt="${p.name}">
+          <div class="product-content">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+            ${faqList}
+            <p class="disclosure"><strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.</p>
+            <a class="buy-btn" href="${p.link}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+          </div>
+        </div>
+      `;
+    });
+  </script>
 
 </body>
 </html>
